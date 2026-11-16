@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mensajes | ¿Quién lo vio?</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/mensajes.css">
+</head>
+
+<body class="app-shell">
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="navegacion-mensajes">
+
+        <a href="inicio.html" class="logo-mensajes">
+            ¿Quién lo vio?
+        </a>
+
+        <div class="iconos-navegacion">
+
+            <a href="inicio.html">
+                <span>⌂</span>
+                <small>Inicio</small>
+            </a>
+
+            <a href="buscar-coincidencias.html">
+                <span>⌕</span>
+                <small>Buscar</small>
+            </a>
+
+            <a href="mis-reportes.html">
+                <span>▤</span>
+                <small>Reportes</small>
+            </a>
+
+            <a href="perfil.html">
+                <span>♙</span>
+                <small>Perfil</small>
+            </a>
+
+            <a href="mensajes.html" class="activo">
+                <span>✉</span>
+                <small>Mensajes</small>
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-mensajes">
+
+        <header class="titulo-mensajes">
+            <div>
+                <p class="mensajes-eyebrow">COMUNICACIÓN</p>
+                <h1>Mensajes</h1>
+                <p>Comunícate con las personas para recuperar objetos.</p>
+            </div>
+        </header>
+
+        <!-- CONTENEDOR DEL CHAT -->
+        <section class="chat-contenedor">
+
+            <!-- LISTA DE CONVERSACIONES -->
+            <aside class="chat-lista">
+
+                <div class="chat-lista-encabezado">
+                    <h2>Mis conversaciones</h2>
+                    <span>Chats</span>
+                </div>
+
+                <div id="lista-conversaciones">
+                    <p class="chat-cargando">Cargando conversaciones...</p>
+                </div>
+
+            </aside>
+
+            <!-- PANEL DE CONVERSACIÓN -->
+            <section class="chat-panel">
+
+                <!-- MENSAJE INICIAL -->
+                <div id="chat-vacio">
+
+                    <div class="chat-vacio-icono">✉</div>
+
+                    <h2>¿Quién lo vio?</h2>
+
+                    <p>
+                        Selecciona una conversación para comenzar a chatear.
+                    </p>
+
+                </div>
+
+                <!-- CHAT ACTIVO -->
+                <div id="chat-activo" hidden>
+
+                    <header class="chat-encabezado">
+
+                        <button
+                            type="button"
+                            id="btn-info-contacto"
+                            class="chat-contacto-btn"
+                        >
+
+                            <span class="chat-avatar-pequeno">👤</span>
+
+                            <span class="chat-contacto-texto">
+                                <strong id="chat-titulo">@usuario</strong>
+                                <small id="chat-subtitulo">Objeto</small>
+                            </span>
+
+                            <span class="chat-info-icono">ⓘ</span>
+
+                        </button>
+
+                    </header>
+
+                    <!-- MENSAJES -->
+                    <div id="chat-mensajes"></div>
+
+                    <!-- FORMULARIO PARA ENVIAR -->
+                    <form id="form-mensaje">
+
+                        <input
+                            type="text"
+                            id="input-mensaje"
+                            placeholder="Escribe un mensaje..."
+                            autocomplete="off"
+                            maxlength="2000"
+                            required
+                        >
+
+                        <button type="submit" id="btn-enviar">
+                            Enviar
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- VENTANA DE INFORMACIÓN DEL CONTACTO -->
+    <div id="modal-info-contacto" class="modal-contacto" hidden>
+
+        <div class="modal-contacto-contenido">
+
+            <button
+                type="button"
+                id="cerrar-modal-contacto"
+                class="cerrar-modal-contacto"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <div class="contacto-avatar">👤</div>
+
+            <p class="contacto-etiqueta">INFORMACIÓN DEL CONTACTO</p>
+
+            <h2>Datos de la persona</h2>
+
+            <div class="contacto-dato">
+
+                <span>Nombre de usuario</span>
+
+                <strong id="info-nombre-usuario">
+                    @usuario
+                </strong>
+
+            </div>
+
+            <div class="contacto-dato">
+
+                <span>Nombre completo</span>
+
+                <strong id="info-nombre-completo">
+                    Nombre de la persona
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="../js/pages/mensajes.js"></script>
+
+</body>
+</html>
